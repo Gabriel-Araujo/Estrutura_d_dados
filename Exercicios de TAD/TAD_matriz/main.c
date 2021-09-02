@@ -4,17 +4,19 @@
 
 
 int main() {
-    Matriz* mat = criar_matriz(2, 2);
+    Matriz* mat = criar_matriz(2, 3);
+    int qnt_linhas = quantidade_linhas(mat);
+    int qnt_colunas = quantidade_colunas(mat);
 
-    for (int contador = 0; contador < quantidade_linhas(mat); contador++) {
-        for (int contador1 = 0; contador1 < quantidade_colunas(mat); contador1++) {
-            atribuir_elemento(mat, contador1, contador, contador+contador1);
+    for (int n_linha = 0; n_linha < qnt_linhas; n_linha++) {
+        for (int n_coluna = 0; n_coluna < qnt_colunas; n_coluna++) {
+            atribuir_elemento(mat, n_linha, n_coluna, n_linha + n_coluna);
         }
     }
 
-    for (int contador = 0; contador < quantidade_linhas(mat); contador++) {
-        for (int contador1 = 0; contador1 < quantidade_colunas(mat); contador1++) {
-            printf("%.2f\n", acessar_elemento(mat, contador, contador1));
+    for (int n_linha = 0; n_linha < qnt_linhas; n_linha++) {
+        for (int n_coluna = 0; n_coluna < qnt_colunas; n_coluna++) {
+            printf("%.2f\n", acessar_elemento(mat, n_linha, n_coluna));
         }
     }
     

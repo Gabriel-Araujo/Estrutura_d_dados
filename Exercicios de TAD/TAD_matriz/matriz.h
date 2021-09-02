@@ -7,11 +7,11 @@
 
 typedef struct matriz Matriz;
 
-Matriz* criar_matriz(int m, int n);
+Matriz* criar_matriz(int m, int qnt_linhas);
 void liberar_matriz(Matriz* m);
 
-float acessar_elemento(Matriz* m, int i, int j);
-void atribuir_elemento(Matriz* m, int i, int j, float valor);
+float acessar_elemento(Matriz* m, int linha, int coluna);
+void atribuir_elemento(Matriz* m, int linha, int coluna, float valor);
 
 int quantidade_linhas(Matriz* m);
 int quantidade_colunas(Matriz* m);

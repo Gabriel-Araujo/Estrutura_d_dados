@@ -11,7 +11,7 @@
 // m colunas x n linhas
 // i linhas x j colunas
 
-/*
+
 struct matriz {
     int linha;
     int coluna;
@@ -19,12 +19,12 @@ struct matriz {
 };
 
 
-Matriz* criar_matriz(int m, int n) {
+Matriz* criar_matriz(int qnt_colunas, int qnt_linhas) {
     Matriz* mat = (Matriz*) malloc(sizeof(Matriz));
-    mat->v = (float *) malloc(m * n * sizeof(float));
+    mat->v = (float *) malloc(qnt_colunas * qnt_linhas * sizeof(float));
 
-    mat->coluna = m;
-    mat->linha = n;
+    mat->coluna = qnt_colunas;
+    mat->linha = qnt_linhas;
 
     return mat;
 }
@@ -35,20 +35,19 @@ void liberar_matriz(Matriz* mat) {
 }
 
 
-float acessar_elemento(Matriz* mat, int i, int j) {
-    return mat->v[i * mat->coluna + j];
+float acessar_elemento(Matriz* mat, int linha, int coluna) {
+    return mat->v[linha * mat->coluna + coluna];
 }
 
 
-void atribuir_elemento(Matriz* mat, int i, int j, float valor) {
-    mat->v[i * mat->coluna + j] = valor;
+void atribuir_elemento(Matriz* mat, int linha, int coluna, float valor) {
+    mat->v[linha * mat->coluna + coluna] = valor;
 }
-*/
+
 
 // Para matriz de um vetor de vetores
 // m colunas x n linhas
-// i linhas x j colunas
-
+/*
 struct matriz {
     int linha;
     int coluna;
@@ -56,16 +55,16 @@ struct matriz {
 };
 
 
-Matriz* criar_matriz(int m, int n) {
+Matriz* criar_matriz(int qnt_colunas, int qnt_linhas) {
     Matriz* mat = (Matriz*) malloc(sizeof(Matriz));
-    mat->v = (float **) malloc(m * sizeof(float *));
+    mat->v = (float **) malloc(qnt_colunas * sizeof(float *));
 
-    for (int contador = 0; contador < m; contador++) {
-        mat->v[contador] = (float *) malloc(n * sizeof(float));
+    for (int contador = 0; contador < qnt_colunas; contador++) {
+        mat->v[contador] = (float *) malloc(qnt_linhas * sizeof(float));
     }
 
-    mat->coluna = m;
-    mat->linha = n;
+    mat->coluna = qnt_colunas;
+    mat->linha = qnt_linhas;
 
     return mat;
 }
@@ -83,15 +82,15 @@ void liberar_matriz(Matriz* mat) {
 }
 
 
-float acessar_elemento(Matriz* m, int i, int j) {
-    return m->v[i][j];
+float acessar_elemento(Matriz* m, int linha, int coluna) {
+    return m->v[coluna][linha];
 }
 
 
-void atribuir_elemento(Matriz* m, int i, int j, float valor) {
-    m->v[i][j] = valor;
+void atribuir_elemento(Matriz* m, int linha, int coluna, float valor) {
+    m->v[linha][coluna] = valor;
 }
-
+*/
 
 // Funções genéricas
 int quantidade_linhas(Matriz* mat) {
