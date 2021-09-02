@@ -16,7 +16,11 @@ int main() {
 
     for (int n_linha = 0; n_linha < qnt_linhas; n_linha++) {
         for (int n_coluna = 0; n_coluna < qnt_colunas; n_coluna++) {
-            printf("%.2f\n", acessar_elemento(mat, n_linha, n_coluna));
+            if (n_coluna == qnt_colunas -1) {
+            printf("%.2f  |\n", acessar_elemento(mat, n_linha, n_coluna));
+            } else {
+                printf("|  %.2f  ", acessar_elemento(mat, n_linha, n_coluna));
+            }
         }
     }
     
