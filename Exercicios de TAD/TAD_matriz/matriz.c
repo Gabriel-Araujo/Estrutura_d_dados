@@ -11,7 +11,7 @@
 // m colunas x n linhas
 // i linhas x j colunas
 
-
+/*
 struct matriz {
     int linha;
     int coluna;
@@ -43,11 +43,11 @@ float acessar_elemento(Matriz* mat, int linha, int coluna) {
 void atribuir_elemento(Matriz* mat, int linha, int coluna, float valor) {
     mat->v[linha * mat->coluna + coluna] = valor;
 }
-
+*/
 
 // Para matriz de um vetor de vetores
 // m colunas x n linhas
-/*
+
 struct matriz {
     int linha;
     int coluna;
@@ -88,9 +88,9 @@ float acessar_elemento(Matriz* m, int linha, int coluna) {
 
 
 void atribuir_elemento(Matriz* m, int linha, int coluna, float valor) {
-    m->v[linha][coluna] = valor;
+    m->v[coluna][linha] = valor;
 }
-*/
+
 
 // Funções genéricas
 int quantidade_linhas(Matriz* mat) {
