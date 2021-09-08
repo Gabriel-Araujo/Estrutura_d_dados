@@ -83,12 +83,21 @@ void liberar_matriz(Matriz* mat) {
 
 
 float acessar_elemento(Matriz* m, int linha, int coluna) {
+    if(m->linha < linha || m->coluna < coluna) {
     return m->v[coluna][linha];
+    }
+
+    exit(1);
 }
 
 
 void atribuir_elemento(Matriz* m, int linha, int coluna, float valor) {
+    if (m->linha < linha || m->coluna < coluna) {
     m->v[coluna][linha] = valor;
+    }
+    else {
+    exit(1);
+    }
 }
 
 

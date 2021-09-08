@@ -17,5 +17,7 @@ int main() {
     liberar_ponto(p);
     liberar_ponto(q);
 
+    system("wait");
+
     return 0;
 }
