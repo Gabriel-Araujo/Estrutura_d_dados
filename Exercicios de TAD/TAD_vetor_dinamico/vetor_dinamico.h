@@ -13,7 +13,9 @@ VetorDinamico* criar_vetor(int n_elementos);
 void liberar_vetor(VetorDinamico* vetor);
 
 int inserir_vetor(VetorDinamico* vetor, float x);
-float get_item(VetorDinamico* vetor, int posicao);
+int remove_elemento_fim(VetorDinamico* vetor);
+
+int get_item(VetorDinamico* vetor, int posicao, float *valor_retorno);
 int tamanho_vetor(VetorDinamico* vetor);
 
 

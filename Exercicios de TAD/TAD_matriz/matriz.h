@@ -10,8 +10,10 @@ typedef struct matriz Matriz;
 Matriz* criar_matriz(int m, int qnt_linhas);
 void liberar_matriz(Matriz* m);
 
-float acessar_elemento(Matriz* m, int linha, int coluna);
-void atribuir_elemento(Matriz* m, int linha, int coluna, float valor);
+// Retorno -> 0 = Erro, 1 = Exito
+int acessar_elemento(Matriz* m, int linha, int coluna, float retorno);
+// Retorno -> 0 = Erro, 1 = Exito
+int atribuir_elemento(Matriz* m, int linha, int coluna, float valor);
 
 int quantidade_linhas(Matriz* m);
 int quantidade_colunas(Matriz* m);

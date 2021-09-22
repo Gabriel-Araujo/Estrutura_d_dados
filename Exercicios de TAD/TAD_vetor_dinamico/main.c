@@ -11,11 +11,13 @@ void adicionar_elementos(VetorDinamico* vetor, int qnt) {
 
 void exibir_elementos(VetorDinamico* vetor) {
     int qnt_de_elementos = tamanho_vetor(vetor);
+    float valor = 0;
 
     printf("Quantidade de elementos no vetor: %i\n", qnt_de_elementos);
 
     for (int contador = 0; contador < qnt_de_elementos; ++contador) {
-        printf("elemento na posicao: %i = %.2f \n", contador, get_item(vetor, contador));
+        get_item(vetor, contador, &valor);
+        printf("elemento na posicao: %i = %.2f \n", contador, valor);
     }
     printf("\n");
 }
@@ -32,6 +34,12 @@ int main() {
     printf("Adicionando mais 5 elementos elemento...\n");
 
     adicionar_elementos(vetor, qnt_de_elementos_inicial);
+
+    exibir_elementos(vetor);
+
+
+    remove_elemento_fim(vetor);
+
 
     exibir_elementos(vetor);
 

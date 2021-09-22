@@ -57,6 +57,7 @@ struct matriz {
 
 Matriz* criar_matriz(int qnt_colunas, int qnt_linhas) {
     Matriz* mat = (Matriz*) malloc(sizeof(Matriz));
+
     mat->v = (float **) malloc(qnt_colunas * sizeof(float *));
 
     for (int contador = 0; contador < qnt_colunas; contador++) {
@@ -82,22 +83,21 @@ void liberar_matriz(Matriz* mat) {
 }
 
 
-float acessar_elemento(Matriz* m, int linha, int coluna) {
-    if(m->linha < linha || m->coluna < coluna) {
-    return m->v[coluna][linha];
+int acessar_elemento(Matriz* m, int linha, int coluna, float retorno) {
+    if(m->linha > linha && m->coluna > coluna) {
+    retorno = m->v[coluna][linha];
+    return 1;
     }
-
-    exit(1);
+    return 0;
 }
 
 
-void atribuir_elemento(Matriz* m, int linha, int coluna, float valor) {
-    if (m->linha < linha || m->coluna < coluna) {
+int atribuir_elemento(Matriz* m, int linha, int coluna, float valor) {
+    if (m->linha > linha && m->coluna > coluna) {
     m->v[coluna][linha] = valor;
+    return 1;
     }
-    else {
-    exit(1);
-    }
+    return 0;
 }
 
 
